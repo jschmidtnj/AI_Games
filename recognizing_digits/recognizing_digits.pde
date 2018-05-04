@@ -20,9 +20,9 @@ float sucess = 0;
 int testCard = 0;
 int trainCard = 0;
 boolean initial_train = true;
-int initial_train_num = 50; //this is the amount it initially trains by, *500
+int initial_train_num = 0; //this is the amount it initially trains by, *500
 boolean initial_test = true;
-int initial_test_num = 30; //this is the amount it initially tests by
+int initial_test_num = 0; //this is the amount it initially tests by
 Card [] testing_set; // the set we use to train (2000)
 Card [] training_set; // the set we use to train (8000)
 ArrayList connec = new ArrayList();
@@ -169,8 +169,8 @@ class Card { // This class contains all the functions to format and save the dat
 
 void loadData(){ // In this function we initialise all out data in two seperate arrays, training[] and test[]
   
-  byte [] images = loadBytes("t10k-images-14x14.idx3-ubyte");
-  byte [] labels = loadBytes("t10k-labels.idx1-ubyte");
+  byte [] images = loadBytes("images.idx3-ubyte");
+  byte [] labels = loadBytes("labels.idx1-ubyte");
   training_set = new Card [8000];
   int tr_pos = 0;
   testing_set = new Card [2000];
